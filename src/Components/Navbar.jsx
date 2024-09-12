@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import assets from '../assets/assets'
 import Btn from './Btn'
-import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
+import {FaBars, FaTimes} from 'react-icons/fa'
 const Navbar = () => {
     const [menu, setMenu]=useState(true);
   return (
@@ -18,8 +18,8 @@ const Navbar = () => {
         <Btn title='Login' styl='bg-blue-800 text-white ml-auto hover:bg-blue-900 hover:text-red md:order-2' />
         <div onClick={()=>{setMenu(!menu)}} className='mx-2 block md:hidden transition-all ease-in-out duration-300'>
             {
-                menu ? <AiOutlineMenu size={24} />
-                    : <AiOutlineClose size={24} />
+                menu ? <FaBars size={24} />
+                    : <FaTimes size={24} />
             }
         </div>
     </nav>
