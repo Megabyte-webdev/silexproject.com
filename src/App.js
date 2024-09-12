@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-
+import FullTxtSection from './Components/FullTxtSection';
+import Hero from './Components/Hero';
+import Navbar from './Components/Navbar'
+import TxtImgSection from './Components/TxtImgSection';
+import TxtImgSection2 from './Components/TxtImgSection2';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='relative max-w-[1200px] w-full mx-auto'>
+      <Navbar />
+      <main >
+        <Hero />
+        <TxtImgSection />
+        <TxtImgSection2 />
+        <FullTxtSection />
+      </main>
+    </div>    
+
   );
 }
 
