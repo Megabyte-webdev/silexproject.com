@@ -6,6 +6,9 @@ import TxtImgSection from '../Components/TxtImgSection';
 import TxtImgSection2 from '../Components/TxtImgSection2';
 import InfoSection from '../Components/InfoSection';
 import Services from '../Components/Services';
+import FAQs from '../Components/FAQs';
+import Testimony from '../Components/Testimony';
+import Footer from '../Components/Footer';
 
 const MainPage = () => {
   return (
@@ -18,6 +21,9 @@ const MainPage = () => {
         <FullTxtSection />
         <InfoSection />
         <Services />
+        <FAQs />
+        <Testimony />
+        <Footer />
       </main>
     </div>    
   )

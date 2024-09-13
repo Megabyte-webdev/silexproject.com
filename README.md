@@ -1,7 +1,7 @@
-# Condala Shopping Landing Page
+# SilexSecure Project
 
 ## Overview
-    Assignment from @ Silex company
+    Assignment from cyber@silexsecure company
 
 
 ## Features
