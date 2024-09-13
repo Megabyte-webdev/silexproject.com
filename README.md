@@ -23,4 +23,4 @@
     
 ## Updated Vercel Link
 
-  https://silexproject-cwr4pr6hy-silexprojects-projects.vercel.app/
+https://silexproject-com.vercel.app/
