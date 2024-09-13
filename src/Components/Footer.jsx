@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='py-4 bg-black text-white min-h-96 w-[98%] md:w-full'>
+    <div className='py-4 bg-black text-white min-h-96 w-[98%] mx-auto md:w-full'>
         <div className='w-[90%] mx-auto border-b-2 border-gray-400 py-4 my-6 flex flex-wrap justify-between items-center'>
             <section className='h-40 rounded-md flex-grow md:w-48 max-w-96 w-[90%] p-6 m-4 transition-all ease-in-out duration-300'>
                 <h2 className='text-xl md:text-2xl text-white'>Ready to Transform your Business?<br/>Take the first step Today!</h2>
