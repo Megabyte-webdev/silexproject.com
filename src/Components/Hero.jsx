@@ -8,7 +8,7 @@ const Hero = () => {
         <h1 className='my-5 md:my-10 capitalize text-center lg:max-w-[1007px] max-w-[600px] w-[98%] text-3xl font-bold md:text-4l lg:text-5xl'>The Hidden tool smart bettors use to outsmart the bookmakers</h1>
         <p className='max-w-[530px] w-[95%] text-center text-sm text-gray-600 md:text-[18px]' >Predictivo<sup className='text-xs md:text-sm'>TM</sup> assists thousands of game-loving bettors and traders in making smarter, data-driven betting decisions every day.</p>
         <div className='z-10 flex items-center mt-5 flex-wrap gap-5 w-fit '>
-            <Btn title="Get started" styl='bg-red-600 text-white border-2 border-red-600 hover:bg-red-800 border-red-800' />
+            <Btn title="Get started" styl='bg-red-600 text-white border-2 border-red-600 hover:bg-red-800 border-red-800' loc='/signup' />
             <Btn title="learn more" styl='border-2 border-purple-600 text-purple-800 hover:bg-purple-800 hover:text-white' />
         </div>
         <img className='h-20 mt-12 mx-7 self-start md:self-center' src={assets.chatTrans} alt="chat translation" />

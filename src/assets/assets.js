@@ -5,6 +5,8 @@ import iphone from './iPhone.png'
 import frame1 from './avatar.png'
 import frame2 from './avatar.jpg'
 import payment from './payment.jpg'
+import registerImg from './register.png'
+import loginImg from './login.png'
 const assets={
     logo,
     chatTrans,
@@ -13,5 +15,7 @@ const assets={
     frame1,
     frame2,
     payment,
+    registerImg,
+    loginImg,
 }
 export default assets;
