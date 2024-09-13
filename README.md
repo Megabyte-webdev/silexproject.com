@@ -21,3 +21,6 @@
 ## Technologies
     React, TailwindCSS and JavaScript
     
+## Updated Vercel Link
+
+  https://silexproject-cwr4pr6hy-silexprojects-projects.vercel.app/
