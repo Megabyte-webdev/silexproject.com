@@ -16,7 +16,7 @@ const Hero = () => {
             <img className='absolute h-48 lg:h-[210px] top-0 bottom-0 right-0 left-0 m-auto' src={assets.iphone} alt="iphone" />
             <img className='h-96 lg:h-[420px]' src={assets.handHolding} alt="hand-holding" />
         </div>
-        <img src={assets.chatTrans} alt="chat translation" className='h-20 absolute bottom-10 left-14 md:left-20' />
+        <img src={assets.payment} alt="chat translation" className='h-20 absolute bottom-10 left-14 md:left-20' />
     </div>
   )
 }

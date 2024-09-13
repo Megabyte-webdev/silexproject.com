@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className='fixed top-0 right-0 left-0 z-20 max-w-[1200px] w-full mx-auto bg-white flex p-3 justify-between items-center flex-wrap md:flex-nowrap'>
         <a href="/" className='flex justify-center items-center mx-2'>
-            <img src={assets.logo} alt="logo" className='h-6'/>
+            <img src={assets.logo} alt="logo" className='h-16 md:h-24'/>
         </a>
         <div className={`${menu ? 'hidden' : 'flex'} my-3 mx-auto gap-2 md:flex flex-col md:justify-around md:items-center order-1 w-full md:w-1/2 md:flex-row md:order-0 *:p-2 *:rounded-md *:cursor-pointer hover:*:hover:bg-slate-300`}>
             <a href='/'>Home</a>
