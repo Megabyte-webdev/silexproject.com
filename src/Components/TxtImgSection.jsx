@@ -4,7 +4,7 @@ const TxtImgSection = () => {
   return (
     <div className='flex flex-wrap justify-center items-center my-5'>
         <img className='w-[95%] lg:w-[400px] md:w-96 p-2' src={assets.frame1} alt="avatar" />
-        <div className='md:flex-grow flex flex-col items-center md:w-1/2 max-w-[400px] w-full p-3 md:px-10 mx-5'>
+        <div className='first-line:md:flex-grow flex flex-col items-center md:w-1/2 max-w-[600px] w-full p-3 md:px-10 mx-5'>
             <h2 className='w-full capitalize text-3xl lg:text-4xl text-gray-700 font-bold'>Enhance Shop management smoother and more efficient</h2>
             <p className='max-w-[600px] text-sm text-gray-500 my-5'>Set ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto baetae vitae dicta sunt explicabo.</p>
             <ul className='max-w-96 w-full self-start flex justify-between items-stretch my-4 '>
