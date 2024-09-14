@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='p-4 bg-black text-white min-h-96 w-[98%] mx-auto md:w-full'>
-        <div className='w-[95%] mx-auto border-b border-gray-900 py-8 my-6 flex flex-wrap justify-between items-end'>
+        <div className='w-[95%] mx-auto border-b border-gray-700 py-8 my-6 flex flex-wrap justify-between items-end'>
             <section className='h-max rounded-md flex-grow md:w-48 max-w-96 w-[98%] m-4 transition-all ease-in-out duration-300'>
                 <h2 className='text-xl text-white'>Ready to Transform your Business?<br/>Take the first step Today!</h2>
                 <p>Totam rem aperiam, eaque ipsa quae ab lilo inventore veritatis et quasi architecto baetae vitae dicta sunt.</p>
@@ -17,7 +17,7 @@ const Footer = () => {
                 <a className='text-xl text-blue-600' href="mailto:cyber@silexsecure.com">cyber@silexsecure.com</a>
             </section>
         </div>
-        <div className='h-max w-[95%] mx-auto border-b border-gray-900 py-4 my-6 flex flex-wrap justify-between items-stretch'>
+        <div className='h-max w-[95%] mx-auto border-b border-gray-700 py-4 my-6 flex flex-wrap justify-between items-stretch'>
             <section className='min-h-28 w-1/2 md:w-max px-4 min-w-[100px] *:block'>
                 <h3 className='text-xl text-gray-200 my-2'>Quick Link</h3>
                 <NavLink to='/' className='text-gray-400 text-sm my-2'>Home</NavLink>
