@@ -95,7 +95,12 @@ if(!fromSignup){
           buttonText="Login"
           formFunction={handleSubmit}
         >
-          
+         
+  <div role="alert" aria-live="assertive" className={`${error ? 'text-red-600' : 'text-green-700'} font-medium text-sm p-1`}>
+    {isLoading ? 'Loading...' : (error || (user && user.message))}
+  </div>
+
+
           <div className="w-[80%] mx-auto flex justify-between gap-1 mt-6">
           {otp.map((data, index) => (
             <input
