@@ -1,18 +1,24 @@
 import FormLayout from '../Components/FormLayout';
-
+import {useLocation} from 'react-router-dom'
 import { AuthContext } from '../Authentications/AuthContext';
 import assets from '../assets/assets'
 import { useContext, useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const OTPVerification = () => {
+const navigate= useNavigate();
+
   const [searchParams]= useSearchParams()
   const sentMail=searchParams.get('email');
+const fromSignup= searchParams.get('signUp');
   const { handleOTP, handleResendOTP, error, isLoading, user} = useContext(AuthContext);
 const [minutes, setMinutes] = useState(2);
 const [seconds, setSeconds] = useState(39);
   const [otp, setOtp] = useState(new Array(4).fill(null));
 
+if(!fromSignup){
+   navigate("/login");
+}
   useEffect(() => {
     const interval = setInterval(() => {
       if (seconds > 0) {
