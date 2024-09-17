@@ -10,7 +10,7 @@ const navigate= useNavigate();
 
   const [searchParams]= useSearchParams()
   const sentMail=searchParams.get('email');
-const fromSignup= searchParams.get('signUp');
+const fromSignup= searchParams.get('fromSignUp');
   const { handleOTP, handleResendOTP, error, isLoading, user} = useContext(AuthContext);
 const [minutes, setMinutes] = useState(2);
 const [seconds, setSeconds] = useState(39);
