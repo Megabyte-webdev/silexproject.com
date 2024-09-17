@@ -1,0 +1,8 @@
+POST https://app.predictifsports.com/api/auth/register
+
+{
+    "username": "lola", 
+    "email": "devteam@silexsecure.com", 
+    "password":"password",
+    "password_confirmation":"password"
+}

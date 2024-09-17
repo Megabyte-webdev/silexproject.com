@@ -3,19 +3,37 @@ import InputField from '../Components/InputField';
 import FormLayout from '../Components/FormLayout';
 import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
 import { AuthContext } from '../Authentications/AuthContext';
-import assets from '../assets/assets'
+import assets from '../assets/assets';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  const { handleRegister, error } = useContext(AuthContext);
+  const navigate=useNavigate();
+  const { handleRegister, error, isLoading, user, handleResendOTP  } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  // Effect to handle redirection
+  // Determine button text based on error state
+  const btnText = error === "The email has already been taken." ? "Verify Account" : "Register";
+
+  // Handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
     handleRegister({ email, username, password, password_confirmation: confirmPassword });
   };
 
+  // Handler for OTP resend
+  const handleVerification = (e) => {
+    e.preventDefault();
+    navigate("/verify-otp?email=${email}", {state:{email}});
+    handleResendOTP({ email });
+  };
 
   return (
     <div className="h-screen flex justify-center md:items-center">
@@ -25,10 +43,12 @@ const Signup = () => {
           subtitle="If you already have an account" 
           linkText="Login here!" 
           linkHref="/login" 
-          buttonText="Register"
-          formFunction={handleSubmit}
+          buttonText={btnText}
+          formFunction={btnText === "Verify Account" ? handleVerification : handleSubmit}
         >
-          <div className='text-red-600 text-sm p-1'>{error}</div>
+          <div role="alert" aria-live="assertive" className={`${error ? 'text-red-600' : 'text-green-700'} font-medium text-sm p-1`}> 
+            {isLoading ? 'Loading...' : (error || (user && user.message))}
+          </div>
           <InputField 
             label="Email" 
             type="email" 

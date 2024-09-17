@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Replace with your actual API base URL
-const BASE_URL = 'https://api.example.com';
+const BASE_URL = 'https://app.predictifsports.com/api';
 
 // Register a new user
 export const register = async (userData) => {
@@ -38,6 +38,17 @@ export const verifyOtp = async (otpData) => {
       }
     });
     return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+//resend OTP
+export const resendOTP = async (email) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/auth/resend-otp`, email);
+    return response.data;
+    
   } catch (error) {
     throw error;
   }

@@ -4,14 +4,24 @@ import FormLayout from '../Components/FormLayout';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import { AuthContext } from '../Authentications/AuthContext';
 import assets from '../assets/assets'
+import { useNavigate } from 'react-router-dom';
+
 const Login = () => {
-  const { handleLogin, error } = useContext(AuthContext);
+  const navigate=useNavigate()
+
+  const { handleLogin, error, isLoading, user} = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin({ email, password });
   };
+  if(user !== null){
+    
+    setTimeout(()=>{
+      navigate("/user")
+    },1000)
+  }
 
   return (
     <div className="h-screen flex justify-center md:items-center">
@@ -24,7 +34,7 @@ const Login = () => {
           buttonText="Login"
           formFunction={handleSubmit}
         >
-          <div className='text-red-600 text-sm p-1'>{error}</div>
+          <div role="alert" aria-live="assertive" className={`${error !== null && 'text-red-600'} ${(isLoading || user) && 'text-green-700'} font-medium text-sm p-1`}> {(isLoading&&'Loading...' )|| (error !== null && error )|| (user !== null && user.message)}</div>
           <InputField 
             label="Email" 
             type="email" 
@@ -38,7 +48,9 @@ const Login = () => {
             type="password" 
             icon={<FaLock className='stroke-current absolute bottom-0 top-0 m-auto' />}
             placeholder="Enter your password"
-            value={password} 
+            minLength="6"
+            value={password}
+            require
             onChange={(e) => setPassword(e.target.value)} 
           />
           <div className="flex items-center justify-between mb-4">
