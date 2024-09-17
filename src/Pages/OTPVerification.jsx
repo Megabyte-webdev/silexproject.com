@@ -114,7 +114,7 @@ if(!fromSignup){
         <p className='w-[80%] mx-auto text-xs text-blue-700'>({minutes < 10 ? `0${minutes}` : minutes}:
           {seconds < 10 ? `0${seconds}` : seconds})</p>
         {
-         <p className={`text-xs text-gray-400 ${( seconds === 0 && minutes === 0)&& 'text-gray-700'}`}>Didn't get a code ? <span onClick={( seconds === 0 && minutes === 0)&& handleReviewOTP} className={( seconds === 0 && minutes === 0)&& 'text-gray-900 font-bold cursor-pointer'}>Resend</span></p>
+         <p className={`w-[80%] mx-auto my-3 mb-auto text-xs text-gray-400 ${( seconds === 0 && minutes === 0)&& 'text-gray-700'}`}>Didn't get a code ? <span onClick={( seconds === 0 && minutes === 0)&& handleReviewOTP} className={( seconds === 0 && minutes === 0)&& 'text-gray-900 font-bold cursor-pointer'}>Resend</span></p>
         }
         </FormLayout>
         
