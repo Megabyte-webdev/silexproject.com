@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const navigate=useNavigate();
-  const { handleRegister, error, isLoading, user, handleResendOTP  } = useContext(AuthContext);
+  const { handleRegister, error, isLoading, user  } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +32,6 @@ const Signup = () => {
   const handleVerification = (e) => {
     e.preventDefault();
     navigate("/verify-otp?email=${email}&fromSignUp=true");
-    handleResendOTP({ email });
   };
 
   return (
