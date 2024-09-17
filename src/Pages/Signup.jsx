@@ -31,7 +31,7 @@ const Signup = () => {
   // Handler for OTP resend
   const handleVerification = (e) => {
     e.preventDefault();
-    navigate("/verify-otp?email=${email}", {state:{email}});
+    navigate("/verify-otp?email=${email}");
     handleResendOTP({ email });
   };
 
