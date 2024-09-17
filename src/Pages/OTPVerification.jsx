@@ -18,9 +18,6 @@ const [seconds, setSeconds] = useState(39);
 
 if(!fromSignup){
    navigate("/login");
-}else{
-setSeconds(0);
-setMinutes(0);
 }
   useEffect(() => {
     const interval = setInterval(() => {
