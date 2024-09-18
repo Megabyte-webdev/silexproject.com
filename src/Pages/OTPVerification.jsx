@@ -64,6 +64,11 @@ if(!fromSignup){
     setMinutes(2);
     setSeconds(39);
   };
+if(user !== null){
+alert(user)
+alert(user?.data?.otp)
+alert(user?.data?.user?.otp)
+}
   const handleChange = (element, index) => {
   if (isNaN(element.value)){ 
     element.value = null;
