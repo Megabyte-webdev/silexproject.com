@@ -87,7 +87,7 @@ setIsOtpComplete(true);
   e.preventDefault();
   if (otp.every((digit) => digit !== "")) {
     if (sentMail !== null) {
-      handleOTP({ email: sentMail, otp: otp.join("") });
+      handleOTP({ "email" : sentMail, "otp" : otp.join("") });
     }
   } else {
     console.error("All OTP fields must be filled with valid digits.");
