@@ -25,6 +25,12 @@ const btnText = (error === "Please verify your email before logging in.")? "Veri
     },1000)
   }
 
+    const handleVerification = (e) => {
+    e.preventDefault();
+    navigate(`/verify-otp?email=${email}&fromSignUp=true&otp=${(user !==null) ? '1234':''}`);
+  };
+
+
   return (
     <div className="h-screen flex justify-center md:items-center">
       <div className="flex justify-center items-stretch h-max w-full max-w-4xl">
