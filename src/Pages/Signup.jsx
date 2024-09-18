@@ -16,7 +16,7 @@ const Signup = () => {
 
   // Effect to handle redirection
   // Determine button text based on error state
-  const btnText = error === "The email has already been taken." ? "Verify Account" : "Register";
+  const btnText = (error === "The email has already been taken.") || (user !== null) ? "Verify Account" : "Register";
 
   // Handler for form submission
   const handleSubmit = (e) => {
@@ -48,7 +48,8 @@ const Signup = () => {
           <div role="alert" aria-live="assertive" className={`${error ? 'text-red-600' : 'text-green-700'} font-medium text-sm p-1`}> 
             {isLoading ? 'Loading...' : (error || (user && user.message))}
           </div>
-          <InputField 
+        <div className={`${user !== null ? 'hidden': 'block'}}>
+  <InputField 
             label="Email" 
             type="email" 
             icon={<FaEnvelope stroke='currentColor' className='absolute bottom-0 top-0 m-auto' />} 
@@ -80,6 +81,7 @@ const Signup = () => {
             value={confirmPassword} 
             onChange={(e) => setConfirmPassword(e.target.value)} 
           />
+</div>
         </FormLayout>
 
         <div className="flex-grow min-h-full max-w-md w-1/2 bg-blue-800 text-white flex-col items-center justify-center px-8 hidden md:flex rounded-md">
