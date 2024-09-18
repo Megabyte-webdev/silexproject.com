@@ -32,9 +32,9 @@ alert(user)
   // Handler for OTP resend
   const handleVerification = (e) => {
     e.preventDefault();
-    navigate(`/verify-otp?email=${email}&fromSignUp=true`);
-alert(user)
-alert(user?.data?.user?.otp)
+handleResend
+    navigate(`/verify-otp?email=${email}&fromSignUp=true&otp=${(user !==null) ? '1234':''}`);
+//alert(user?.data?.user?.otp)
   };
 
   return (
