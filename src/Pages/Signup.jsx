@@ -48,7 +48,7 @@ const Signup = () => {
           <div role="alert" aria-live="assertive" className={`${error ? 'text-red-600' : 'text-green-700'} font-medium text-sm p-1`}> 
             {isLoading ? 'Loading...' : (error || (user && user.message))}
           </div>
-        <div className={`${user !== null ? 'hidden': 'block'}}>
+        <div className={`${user !== null ? 'hidden': 'block'}`}>
   <InputField 
             label="Email" 
             type="email" 
