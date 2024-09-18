@@ -1,4 +1,4 @@
-uimport React, { useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import InputField from '../Components/InputField';
 import FormLayout from '../Components/FormLayout';
 import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
@@ -35,7 +35,7 @@ alert(user)
   // Handler for OTP resend
   const handleVerification = (e) => {
     e.preventDefault();
-    navigate(`/verify-otp?email=${email}&fromSignUp=true&otp=${(user !==null) ? '1234':''});
+    navigate(`/verify-otp?email=${email}&fromSignUp=true&otp=${(user !==null) ? '1234':''}`);
   };
 
   return (
