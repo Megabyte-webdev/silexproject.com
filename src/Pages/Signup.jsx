@@ -26,16 +26,17 @@ const Signup = () => {
       return;
     }
     handleRegister({ email, username, password, password_confirmation: confirmPassword });
+if(user !== null){
 alert(user)
+alert(user?.data?.otp)
+alert(user?.data?.user?.otp)
+}
   };
 
   // Handler for OTP resend
   const handleVerification = (e) => {
     e.preventDefault();
     navigate(`/verify-otp?email=${email}&fromSignUp=true&otp=${(user !==null) ? '1234':''}`);
-
-alert(user?.data?.otp)
-alert(user?.data?.user?.otp)
   };
 
   return (
