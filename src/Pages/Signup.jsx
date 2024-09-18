@@ -29,11 +29,6 @@ const Signup = () => {
 
   };
 
-if(user !== null){
-alert(user)
-alert(user?.data?.otp)
-alert(user?.data?.user?.otp)
-}
 
   // Handler for OTP resend
   const handleVerification = (e) => {
