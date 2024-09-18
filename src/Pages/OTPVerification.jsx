@@ -117,7 +117,7 @@ setIsOtpComplete(true);
               maxLength="1"
               key={index}
               value={data}
-disabled={isOtpComplete}
+disabled={isOtpComplete. && isOtpComplete}
               onInput={e => handleChange(e.target, index)}
               onKeyDown={e => handleKeyDown(e, index)}
               onFocus={e => e.target.select()}
