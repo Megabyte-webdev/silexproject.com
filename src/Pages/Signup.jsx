@@ -28,6 +28,7 @@ const Signup = () => {
     handleRegister({ email, username, password, password_confirmation: confirmPassword });
 
   };
+
 if(user !== null){
 alert(user)
 alert(user?.data?.otp)
