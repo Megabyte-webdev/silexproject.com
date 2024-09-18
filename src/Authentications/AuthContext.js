@@ -1,10 +1,10 @@
-import { createContext, useState } from 'react';
-import { login, register, verifyOtp, resendOTP} from './AuthService';
+import { createContext, useState } from "react";
+import { login, register, verifyOtp, resendOTP } from "./AuthService";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isLoading, setIsLoading] =useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 
@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      setError(err.response?.data?.message || 'Registration failed');
+      setError(err.response?.data?.message || "Registration failed");
     }
   };
 
@@ -30,10 +30,10 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      if(err.response.data.message.length !== 0 ){
-        setError((err.response?.data?.message) || 'Login failed');
-      }else{
-        setError(err.response?.data?.data || 'Login failed');
+      if (err.response.data.message.length !== 0) {
+        setError(err.response?.data?.message || "Login failed");
+      } else {
+        setError(err.response?.data?.data || "Login failed");
       }
     }
   };
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      setError(err.response?.data?.message || 'OTP Failed');
+      setError(err.response?.data?.message || "OTP Failed");
     }
   };
 
@@ -60,15 +60,26 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      if(err.response.data.message.length !== 0 ){
-        setError((err.response?.data?.message) || 'Login failed');
-      }else{
-        setError(err.response?.data?.data || 'Login failed');
+      if (err.response.data.message.length !== 0) {
+        setError(err.response?.data?.message || "Login failed");
+      } else {
+        setError(err.response?.data?.data || "Login failed");
       }
     }
   };
   return (
-    <AuthContext.Provider value={{ handleRegister, handleLogin, handleOTP, handleResendOTP, setUser, user, error, isLoading }}>
+    <AuthContext.Provider
+      value={{
+        handleRegister,
+        handleLogin,
+        handleOTP,
+        handleResendOTP,
+        setUser,
+        user,
+        error,
+        isLoading,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

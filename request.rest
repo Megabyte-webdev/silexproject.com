@@ -1,8 +1,31 @@
 POST https://app.predictifsports.com/api/auth/register
 
 {
-    "username": "lola", 
-    "email": "devteam@silexsecure.com", 
-    "password":"password",
-    "password_confirmation":"password"
+   
+    "status": 200,
+    "message": "Login successful.",
+    "data": {
+        "user": {
+            "id": 1,
+            "name": "Admin",
+            "username": "Admin",
+            "email": "devteam@silexsecure.com",
+            "is_admin": 1,
+            "is_email_verified": 1
+        },
+        "token": "68|IufGCyYbwhoHh7npgdpHdc5kLKC27zC7vmsk7iD5cf0a0ce4"
+    }
 }
+
+//request-otp endpoint
+# {status: 200, message: 'OTP has been sent to your email.', data: {…}}
+# data
+# : 
+# {otp: '7793'}
+# message
+# : 
+# "OTP has been sent to your email."
+# status
+# : 
+# 200
+# }

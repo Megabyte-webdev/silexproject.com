@@ -1,16 +1,16 @@
-import axios from 'axios';
+import axios from "axios";
 
 // Replace with your actual API base URL
-const BASE_URL = 'https://app.predictifsports.com/api';
+const BASE_URL = "https://app.predictifsports.com/api";
 
 // Register a new user
 export const register = async (userData) => {
   try {
     const response = await axios.post(`${BASE_URL}/auth/register`, userData, {
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
     });
     return response.data;
   } catch (error) {
@@ -33,9 +33,9 @@ export const verifyOtp = async (otpData) => {
   try {
     const response = await axios.post(`${BASE_URL}/auth/verify-otp`, otpData, {
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
     });
     return response.data;
   } catch (error) {
@@ -48,7 +48,6 @@ export const resendOTP = async (email) => {
   try {
     const response = await axios.post(`${BASE_URL}/auth/resend-otp`, email);
     return response.data;
-    
   } catch (error) {
     throw error;
   }
@@ -57,7 +56,9 @@ export const resendOTP = async (email) => {
 // Forget password
 export const forgetPassword = async (email) => {
   try {
-    const response = await axios.post(`${BASE_URL}/auth/forget-password`, { email });
+    const response = await axios.post(`${BASE_URL}/auth/forget-password`, {
+      email,
+    });
     return response.data;
   } catch (error) {
     throw error;
@@ -67,12 +68,16 @@ export const forgetPassword = async (email) => {
 // Reset password
 export const resetPassword = async (resetData) => {
   try {
-    const response = await axios.post(`${BASE_URL}/auth/reset-password`, resetData, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+    const response = await axios.post(
+      `${BASE_URL}/auth/reset-password`,
+      resetData,
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
       }
-    });
+    );
     return response.data;
   } catch (error) {
     throw error;
