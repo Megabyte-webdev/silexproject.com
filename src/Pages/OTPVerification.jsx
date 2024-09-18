@@ -63,15 +63,27 @@ if(!fromSignup){
     setSeconds(39);
   };
   const handleChange = (element, index) => {
-    if (isNaN(element.value)){ 
-      element.value=null
-      return false 
-    };
+  if (isNaN(element.value)) { 
+    element.value = null;
+    return false; 
+  }
 
-if (index === 3 && element.value !== null) {
-  handleSubmit();
-setIsOtpComplete(true);
-}
+  const newOtp = [...otp.map((d, idx) => (idx === index ? element.value : d))];
+  setOtp(newOtp);
+alert(otp)
+  // Move to the next input box
+  if (element.nextSibling) {
+    element.nextSibling.focus();
+    element.nextSibling.select();
+  }
+
+  // Check if all inputs are filled
+  if (newOtp.every(digit => digit !== "")) {
+    handleSubmit(); // Call handleSubmit only when all fields are filled
+alert('complete')
+    setIsOtpComplete(true);
+  }
+};
 
 
     setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
