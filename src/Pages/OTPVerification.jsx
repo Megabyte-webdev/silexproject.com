@@ -70,7 +70,7 @@ if(!fromSignup){
 
   const newOtp = [...otp.map((d, idx) => (idx === index ? element.value : d))];
   setOtp(newOtp);
-alert(newOtp)
+
   // Move to next input box
   if (element.nextSibling) {
     element.nextSibling.focus();
@@ -80,7 +80,6 @@ alert(newOtp)
   // Only submit if all fields are filled
   if (newOtp.every(digit => digit !== "")) {
     handleSubmit();  // Submit the form only when all OTP fields are filled
-alert('complete')
     setIsOtpComplete(true);
   }
 };
