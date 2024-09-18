@@ -64,11 +64,7 @@ if(!fromSignup){
     setMinutes(2);
     setSeconds(39);
   };
-if(user !== null){
-alert(user)
-alert(user?.data?.otp)
-alert(user?.data?.user?.otp)
-}
+
   const handleChange = (element, index) => {
   if (isNaN(element.value)){ 
     element.value = null;
@@ -119,7 +115,11 @@ alert(user?.data?.user?.otp)
   <div role="alert" aria-live="assertive" className={`font-medium text-sm p-1`}>
     {isLoading ? 'Loading...' : (error || (user && user.message))}
   </div>
-
+<div className="w-[80%] bg-grey-300 text-black text-2xl tracking-wide font-bold">
+{
+  user !== null && user?.data?.otp
+}
+</div>
 
           <div className="w-[80%] mx-auto flex justify-between gap-1 mt-6">
           {otp.map((data, index) => (
