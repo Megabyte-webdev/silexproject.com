@@ -87,7 +87,13 @@ if(!fromSignup){
   }
 };
 
- 
+ if(user !== null && (user.message.match("verified"))){
+    
+    setTimeout(()=>{
+      navigate("/user")
+    },1000)
+  }
+
   const handleSubmit = (e) => {
   e.preventDefault();
   if (otp.every((digit) => digit !== "")) {
