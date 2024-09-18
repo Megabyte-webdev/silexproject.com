@@ -87,7 +87,7 @@ setIsOtpComplete(true);
     e.preventDefault();
    if(sentMail !== null ){
     
-    handleOTP({  sentMail , otp: otp.join("") });
+    handleOTP({ "email" : sentMail , "otp" : otp.join("") });
    }
   };
 
