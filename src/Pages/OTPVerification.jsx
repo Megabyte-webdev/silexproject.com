@@ -14,6 +14,7 @@ const fromSignup= searchParams.get('fromSignUp');
   const { handleOTP, handleResendOTP, error, isLoading, user} = useContext(AuthContext);
 const [minutes, setMinutes] = useState(2);
 const [seconds, setSeconds] = useState(39);
+const [isOtpComplete, setIsOtpComplete] = useState(false);
   const [otp, setOtp] = useState(new Array(4).fill(null));
 
 if(!fromSignup){
@@ -67,6 +68,12 @@ if(!fromSignup){
       return false 
     };
 
+if (index === 3 && element.value !== null) {
+  handleSubmit();
+setIsOtpComplete(true);
+}
+
+
     setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
     
     // Focus on next input box
@@ -78,7 +85,7 @@ if(!fromSignup){
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-   if(user !== null){
+   if(sentMail !== null ){
     
     handleOTP({  sentMail , otp: otp.join("") });
    }
@@ -110,6 +117,7 @@ if(!fromSignup){
               maxLength="1"
               key={index}
               value={data}
+disabled={isOtpComplete}
               onInput={e => handleChange(e.target, index)}
               onKeyDown={e => handleKeyDown(e, index)}
               onFocus={e => e.target.select()}
