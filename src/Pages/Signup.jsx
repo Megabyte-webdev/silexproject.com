@@ -32,6 +32,8 @@ const Signup = () => {
   const handleVerification = (e) => {
     e.preventDefault();
     navigate(`/verify-otp?email=${email}&fromSignUp=true`);
+
+alert(user?.data?.otp)
   };
 
   return (
