@@ -12,6 +12,8 @@ const Login = () => {
   const { handleLogin, error, isLoading, user} = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+const btnText = (error === "Please verify your email before logging in.")? "Verify Account" : "Login";
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin({ email, password });
@@ -31,11 +33,12 @@ const Login = () => {
           subtitle="If you don’t have an account" 
           linkText="Register here!" 
           linkHref="/signup" 
-          buttonText="Login"
-          formFunction={handleSubmit}
+          buttonText={btnText}
+          formFunction={btnText === "Verify Account" ? handleVerification : handleSubmit}
         >
           <div role="alert" aria-live="assertive" className={`${error !== null && 'text-red-600'} ${(isLoading || user) && 'text-green-700'} font-medium text-sm p-1`}> {(isLoading&&'Loading...' )|| (error !== null && error )|| (user !== null && user.message)}</div>
-          <InputField 
+        <div className={btnText !== "Login"? 'hidden': 'block'}>
+  <InputField 
             label="Email" 
             type="email" 
             icon={<FaEnvelope stroke='currentColor' className='absolute bottom-0 top-0 m-auto' />}
@@ -53,6 +56,8 @@ const Login = () => {
             require
             onChange={(e) => setPassword(e.target.value)} 
           />
+</div>
+
           <div className="flex items-center justify-between mb-4">
             <label className="inline-flex items-center">
               <input type="checkbox" className="form-checkbox" />
