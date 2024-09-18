@@ -13,8 +13,8 @@ const navigate= useNavigate();
 const fromSignup= searchParams.get('fromSignUp');
 const receivedOtp= searchParams.get('otp');
   const { handleOTP, handleResendOTP, error, isLoading, user} = useContext(AuthContext);
-const [minutes, setMinutes] = useState(2);
-const [seconds, setSeconds] = useState(39);
+const [minutes, setMinutes] = useState(receivedOtp === ""? 0 : 2);
+const [seconds, setSeconds] = useState(receivedOtp === ""? 0 : 39);
 const [isOtpComplete, setIsOtpComplete] = useState(false);
   const [otp, setOtp] = useState(new Array(4).fill(""));
 
@@ -22,7 +22,7 @@ if(!fromSignup){
    navigate("/login");
 }
   useEffect(() => {
-if(received otp !== null){
+
     const interval = setInterval(() => {
       if (seconds > 0) {
         setSeconds(seconds - 1);
@@ -41,7 +41,6 @@ if(received otp !== null){
     return () => {
       clearInterval(interval);
     };
-}
   }, [seconds, minutes]);
 
   const handleKeyDown=(e, index)=>{
