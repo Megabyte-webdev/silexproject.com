@@ -26,7 +26,6 @@ const Signup = () => {
       return;
     }
     handleRegister({ email, username, password, password_confirmation: confirmPassword });
-alert(user)
   };
 
   // Handler for OTP resend
