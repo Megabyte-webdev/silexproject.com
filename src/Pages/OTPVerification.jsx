@@ -15,7 +15,7 @@ const fromSignup= searchParams.get('fromSignUp');
 const [minutes, setMinutes] = useState(2);
 const [seconds, setSeconds] = useState(39);
 const [isOtpComplete, setIsOtpComplete] = useState(false);
-  const [otp, setOtp] = useState(new Array(4).fill(null));
+  const [otp, setOtp] = useState(new Array(4).fill(""));
 
 if(!fromSignup){
    navigate("/login");
@@ -84,12 +84,16 @@ setIsOtpComplete(true);
     }
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-   if(sentMail !== null ){
-    
-    handleOTP({ "email" : sentMail , "otp" : otp.join("") });
-   }
-  };
+  e.preventDefault();
+  if (otp.every((digit) => digit !== "")) {
+    if (sentMail !== null) {
+      handleOTP({ email: sentMail, otp: otp.join("") });
+    }
+  } else {
+    console.error("All OTP fields must be filled with valid digits.");
+  }
+};
+
 
   return (
     <div className="h-screen flex justify-center md:items-center">
