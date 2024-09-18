@@ -85,16 +85,7 @@ alert('complete')
   }
 };
 
-
-    setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
-    
-    // Focus on next input box
-    if (element.nextSibling) {
-      element.nextSibling.focus();
-
-      element.nextSibling.select();
-    }
-  };
+ 
   const handleSubmit = (e) => {
   e.preventDefault();
   if (otp.every((digit) => digit !== "")) {
