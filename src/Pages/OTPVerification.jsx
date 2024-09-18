@@ -87,7 +87,7 @@ if(!fromSignup){
   }
 };
 
- if(user !== null && (user.message.match("verified"))){
+ if(user !== null && (user?.message.match("verified"))){
     
     setTimeout(()=>{
       navigate("/user")
