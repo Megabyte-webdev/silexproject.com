@@ -115,7 +115,7 @@ if(!fromSignup){
   <div role="alert" aria-live="assertive" className={`font-medium text-sm p-1`}>
     {isLoading ? 'Loading...' : (error || (user && user.message))}
   </div>
-<div className="w-[80%] bg-grey-300 text-black text-2xl tracking-wide font-bold">
+<div className="mx-auto my-4 p-4 w-max bg-grey-400 text-black text-2xl tracking-wide font-bold">
 {
   user !== null && user?.data?.otp
 }
