@@ -60,7 +60,7 @@ if(!fromSignup){
   }
   const handleReviewOTP = (e) => {
     e.preventDefault();
-    handleResendOTP({ "email" : sentMail });
+    handleResendOTP({ "email": sentMail });
     setMinutes(2);
     setSeconds(39);
   };
