@@ -11,6 +11,7 @@ const navigate= useNavigate();
   const [searchParams]= useSearchParams()
   const sentMail=searchParams.get('email');
 const fromSignup= searchParams.get('fromSignUp');
+const receivedOtp= searchParams.get('otp');
   const { handleOTP, handleResendOTP, error, isLoading, user} = useContext(AuthContext);
 const [minutes, setMinutes] = useState(2);
 const [seconds, setSeconds] = useState(39);
@@ -21,6 +22,7 @@ if(!fromSignup){
    navigate("/login");
 }
   useEffect(() => {
+if(received otp !== null){
     const interval = setInterval(() => {
       if (seconds > 0) {
         setSeconds(seconds - 1);
@@ -39,6 +41,7 @@ if(!fromSignup){
     return () => {
       clearInterval(interval);
     };
+}
   }, [seconds, minutes]);
 
   const handleKeyDown=(e, index)=>{
