@@ -3,7 +3,7 @@ import Btn from "./Btn";
 import assets from "../assets/assets";
 const Hero = () => {
   return (
-    <div className="relative text-black h-[650px] flex flex-col items-center pt-28 *:transition-all *:ease-in-out *:duration-500">
+    <div className="relative text-black h-[650px] flex flex-col items-center mb-20 pt-28 *:transition-all *:ease-in-out *:duration-500">
       <small className="mt-4">Fully Integrated Point of-sale System</small>
       <h1 className="my-5 md:my-10 capitalize text-center lg:max-w-[1007px] max-w-[600px] w-[98%] text-3xl font-bold md:text-4l lg:text-5xl">
         The Hidden tool smart bettors use to outsmart the bookmakers
