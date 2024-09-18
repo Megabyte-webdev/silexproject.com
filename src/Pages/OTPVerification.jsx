@@ -112,7 +112,7 @@ if(!fromSignup){
           formFunction={handleSubmit}
         >
          
-  <div role="alert" aria-live="assertive" className={`font-medium text-sm p-1`}>
+  <div role="alert" aria-live="assertive" className={`${error ? 'text-red-600' : 'text-green-700'} font-medium text-sm p-1`}> 
     {isLoading ? 'Loading...' : (error || (user && user.message))}
   </div>
 <div className="mx-auto my-4 p-4 w-max bg-grey-400 text-black text-2xl tracking-wide font-bold">
