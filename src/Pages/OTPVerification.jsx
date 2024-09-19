@@ -166,7 +166,7 @@ const OTPVerification = () => {
         <div className="flex-grow min-h-full max-w-md w-1/2 bg-blue-800 text-white flex-col items-center justify-center px-8 hidden md:flex rounded-md">
           <div>
             <img
-              className="my-5 h-[250px]"
+              className="absolutemy-5 h-[250px]"
               src={assets.otpImg}
               alt="register"
             />
