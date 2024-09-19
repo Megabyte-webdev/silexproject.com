@@ -17,7 +17,8 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      setError(err.response?.data?.message || "Registration failed");
+        setError(err.response?.data?.message || "Registeration failed");
+      
     }
   };
 
@@ -30,7 +31,7 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      if (err.response.data.message.length !== 0) {
+      if (user !== null && err.response.data.message.length !== 0) {
         setError(err.response?.data?.message || "Login failed");
       } else {
         setError(err.response?.data?.data || "Login failed");
@@ -47,7 +48,11 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      setError(err.response?.data?.message || "OTP Failed");
+      if (user !== null && err.response.data.message.length !== 0) {
+        setError(err.response?.data?.message || "OTP failed");
+      } else {
+        setError(err.response?.data?.data || "OTP failed");
+      }
     }
   };
 
@@ -60,10 +65,10 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      if (err.response.data.message.length !== 0) {
-        setError(err.response?.data?.message || "Login failed");
+      if (user !== null && err.response.data.message.length !== 0) {
+        setError(err.response?.data?.message || "OTP failed");
       } else {
-        setError(err.response?.data?.data || "Login failed");
+        setError(err.response?.data?.data || "OTP failed");
       }
     }
   };

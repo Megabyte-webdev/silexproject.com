@@ -167,7 +167,7 @@ const OTPVerification = () => {
           <div>
             <img
               className="my-5 h-[250px]"
-              src={assets.loginImg}
+              src={assets.otpImg}
               alt="register"
             />
             <h2 className="text-sm font-bold w-max">

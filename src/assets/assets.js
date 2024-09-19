@@ -7,6 +7,7 @@ import frame2 from './avatar.jpg'
 import payment from './payment.jpg'
 import registerImg from './register.png'
 import loginImg from './login.png'
+import otpImg from './otpImg.png'
 const assets={
     logo,
     chatTrans,
@@ -17,5 +18,6 @@ const assets={
     payment,
     registerImg,
     loginImg,
+    otpImg,
 }
 export default assets;

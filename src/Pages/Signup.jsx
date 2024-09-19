@@ -124,11 +124,11 @@ const Signup = () => {
           </div>
         </FormLayout>
 
-        <div className="flex-grow min-h-full max-w-md w-1/2 bg-blue-800 text-white flex-col items-center justify-center px-8 hidden md:flex rounded-md">
+        <div className="flex-grow min-h-[400px] max-h-full max-w-md w-1/2 bg-blue-800 text-white flex-col items-center justify-center px-8 hidden md:flex rounded-md">
           <div>
             <img
               className="my-5 h-[250px]"
-              src={assets.loginImg}
+              src={assets.registerImg}
               alt="register"
             />
             <h2 className="text-sm font-bold w-max">
