@@ -114,7 +114,7 @@ const OTPVerification = () => {
               aria-live="assertive"
               className={`${
                 error ? "text-red-600" : "text-green-700"
-              } font-medium text-sm p-1 w-max`}
+              } font-medium text-sm p-1 w-full`}
             >
               {isLoading ? "Loading..." : error || (user && user.message)}
             </div>
