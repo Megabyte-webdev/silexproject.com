@@ -25,7 +25,9 @@ const Login = () => {
     setTimeout(() => {
       navigate("/user");
     }, 1000);
-  }
+  }else{
+alert(error)
+}
 
   const handleVerification = (e) => {
     e.preventDefault();
