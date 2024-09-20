@@ -31,10 +31,8 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      if (user !== null && err.response.data.message.length !== 0) {
-        setError(err.response?.data?.message || "Login failed");
-      } else {
-        setError(err.response?.data?.data || "Login failed");
+      setIsLoading(false);
+        setError(err.response?.data?.message || err.response?.data?.data || "Login failed");
       }
     }
   };
@@ -48,11 +46,8 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      if (user !== null && err.response.data.message.length !== 0) {
-        setError(err.response?.data?.message || "OTP failed");
-      } else {
-        setError(err.response?.data?.data || "OTP failed");
-      }
+      setIsLoading(false);
+        setError(err.response?.data?.message || err.response?.data?.data || "OTP failed");
     }
   };
 
@@ -65,11 +60,8 @@ export const AuthProvider = ({ children }) => {
       setError(null); // Clear error on success
     } catch (err) {
       setIsLoading(false);
-      if (user !== null && err.response.data.message.length !== 0) {
-        setError(err.response?.data?.message || "OTP failed");
-      } else {
-        setError(err.response?.data?.data || "OTP failed");
-      }
+      setIsLoading(false);
+        setError(err.response?.data?.message || err.response?.data?.data || "OTP failed");
     }
   };
   return (
