@@ -57,9 +57,7 @@ const Login = () => {
             } font-medium text-sm p-1`}
           >
             {" "}
-            {(isLoading && "Loading...") ||
-              (error !== null && error) ||
-              (user !== null && user.message)}
+                        {isLoading ? "Loading..." : error || (user && user.message)}
           </div>
           <div className={btnText !== "Login" ? "hidden" : "block"}>
             <InputField
