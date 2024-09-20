@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
       setIsLoading(false);
       setIsLoading(false);
         setError(err.response?.data?.message || err.response?.data?.data || "Login failed");
-      }
+      
     }
   };
 
